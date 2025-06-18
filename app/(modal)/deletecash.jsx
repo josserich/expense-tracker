@@ -1,10 +1,11 @@
-import { View, Text } from "react-native";
 import React from "react";
+import { View, Text } from "react-native";
+import { DeleteCash } from "../../src/features/cash";
 
 const ModalDeleteCash = () => {
   return (
-    <View>
-      <Text>ModalDeleteCash</Text>
+    <View className="flex-1">
+      <DeleteCash />
     </View>
   );
 };

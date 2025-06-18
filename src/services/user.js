@@ -24,20 +24,20 @@ const userSchema = async () => {
   UserInfo TEXT
   );
   `);
-  // const query = `
-  // SELECT * FROM User `;
-  // const user = await db.getFirstAsync(query);
-  // if (!user) {
-  // const query = `
-  // INSERT
-  // INTO
-  // User
-  // (UserName, UserPassword, UserFullname, UserEmail, UserImg, UserInfo)
-  // VALUES
-  // ("josse", "billionaireWFA100%", "Josse Surya Pinem", "pinemjosse@gmail.com", "", "")
-  // `;
-  // await db.runAsync(query);
-  // }
+  const query = `
+  SELECT * FROM User `;
+  const user = await db.getFirstAsync(query);
+  if (!user) {
+    const query = `
+    INSERT
+    INTO
+    User
+    (UserName, UserPassword, UserFullname, UserEmail, UserImg, UserInfo)
+    VALUES
+    ("josse", "billionaireWFA100%", "Josse Surya Pinem", "pinemjosse@gmail.com", "", "")
+    `;
+    await db.runAsync(query);
+  }
 };
 const updateUserAPI = async (req) => {
   const { userName, userFullname, userEmail, userImg, userInfo } = req;
@@ -131,7 +131,14 @@ const resetPasswordAPI = async (req) => {
 const getUserAPI = async () => {
   const db = await getDB();
   const query = `
-  SELECT * FROM User
+  SELECT
+  UserId,
+  UserName,
+  UserFullname,
+  UserEmail,
+  UserImg,
+  UserInfo 
+  FROM User
   `;
   const user = await db.getFirstAsync(query);
   return user;

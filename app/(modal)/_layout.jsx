@@ -28,6 +28,12 @@ const ModalLayout = () => {
         }}
       />
       <Stack.Screen
+        name="deletecash"
+        options={{
+          headerTitle: "Delete Cash",
+        }}
+      />
+      <Stack.Screen
         name="resetpassword"
         options={{
           headerTitle: "Reset Password",

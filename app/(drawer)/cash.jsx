@@ -47,7 +47,7 @@ const Cash = () => {
         data={loading ? [{}] : cash}
         renderItem={({ item, index }) =>
           loading ? (
-            <Spinner />
+            <Spinner color="#315EFF" />
           ) : (
             cash.length >= 1 && <ListCash data={item} index={index} />
           )
@@ -67,7 +67,7 @@ const Cash = () => {
               </View>
               <TxtTruncate
                 title={`${
-                  cashTotal > 0
+                  cashTotal
                     ? `+ ${formatCurrency1(cashTotal)}`
                     : `${formatCurrency1(0)}`
                 }`}

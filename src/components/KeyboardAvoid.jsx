@@ -11,8 +11,8 @@ import { AllContext } from "../context/AllProvider";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const KeyboardAvoidingComponent = ({ children }) => {
-  const { setKeyboardVisible } = useContext(AllContext);
-  const { bottom } = useSafeAreaInsets();
+  const { isKeyboardVisible, setKeyboardVisible } = useContext(AllContext);
+  const { top, bottom } = useSafeAreaInsets();
   useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener(
       "keyboardDidShow",
@@ -30,7 +30,11 @@ const KeyboardAvoidingComponent = ({ children }) => {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
-      style={{ flex: 1 }}
+      style={{
+        flex: 1,
+        paddingBottom: isKeyboardVisible ? bottom + top * 2 : bottom + 10,
+        backgroundColor: "white",
+      }}
       keyboardVerticalOffset={Platform.OS === "ios" ? 80 : 0}
     >
       {children}

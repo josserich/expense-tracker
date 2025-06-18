@@ -1,11 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
-
+import { UpdateUser } from "../../src/features/user";
+import { KeyboardAvoidingComponent } from "../../src/components";
 const Profile = () => {
   return (
-    <View>
-      <Text>Profile</Text>
-    </View>
+    <KeyboardAvoidingComponent>
+      <UpdateUser />
+    </KeyboardAvoidingComponent>
   );
 };
 

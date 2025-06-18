@@ -7,6 +7,7 @@ export const AllProvider = ({ children }) => {
   const financialRef = useRef(null);
   const [cashSuccess, setCashSuccess] = useState("");
   // user
+  const [userSuccess, setUserSuccess] = useState("");
   const [reqUser, setReqUser] = useState({
     userId: 0,
     userName: "",
@@ -26,6 +27,8 @@ export const AllProvider = ({ children }) => {
         setCashSuccess,
         reqUser,
         setReqUser,
+        userSuccess,
+        setUserSuccess,
       }}
     >
       {children}

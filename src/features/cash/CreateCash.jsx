@@ -50,7 +50,7 @@ const CreateCash = (props) => {
     }
   };
   return (
-    <View className="flex-1 bg-white">
+    <View className="flex-1">
       <ScrollView ref={scrollViewRef} keyboardShouldPersistTaps="handled">
         <View className="p-5">
           {/* alert error */}
@@ -102,7 +102,7 @@ const CreateCash = (props) => {
       <View
         className="p-4 border-t border-t-[#d1c6c4]"
         style={{
-          paddingBottom: isKeyboardVisible ? bottom + top * 2 : bottom + 20,
+          paddingBottom: bottom + 20,
         }}
       >
         <TouchableOpacity

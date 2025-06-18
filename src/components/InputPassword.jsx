@@ -11,7 +11,6 @@ const InputPassword = (props) => {
   } = props;
   const [passwordVisible, setPasswordVisible] = useState(false);
   const handleChange = (field, txt) => {
-    console.log(field, txt);
     setReq((prev) => ({
       ...prev,
       [field]: txt,
