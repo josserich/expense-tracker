@@ -8,6 +8,7 @@ const InputPassword = (props) => {
     color = "#00000",
     setReq,
     field = "password",
+    ...rest
   } = props;
   const [passwordVisible, setPasswordVisible] = useState(false);
   const handleChange = (field, txt) => {
@@ -32,6 +33,7 @@ const InputPassword = (props) => {
           placeholder={passwordVisible ? "ex : password" : "******"}
           placeholderTextColor={color}
           onChangeText={(txt) => handleChange(field, txt)}
+          {...rest}
         />
         <TouchableOpacity onPress={() => setPasswordVisible(!passwordVisible)}>
           <Entypo

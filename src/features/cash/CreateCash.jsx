@@ -101,9 +101,9 @@ const CreateCash = (props) => {
       </ScrollView>
       <View
         className="p-4 border-t border-t-[#d1c6c4]"
-        style={{
-          paddingBottom: bottom + 20,
-        }}
+        // style={{
+        //   paddingBottom: bottom + 20,
+        // }}
       >
         <TouchableOpacity
           className="bg-[#1F41BB] px-4 py-3 rounded-md"

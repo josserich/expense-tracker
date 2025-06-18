@@ -54,7 +54,10 @@ const DeleteCash = () => {
     }
   };
   return (
-    <View className="bg-white flex-1 p-5" style={{ paddingBottom: bottom }}>
+    <View
+      className="bg-white flex-1 p-5"
+      style={{ paddingBottom: bottom + top }}
+    >
       <View className="m-auto items-center">
         {loading && <Spinner color="#315EFF" />}
         {!loading && (

@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-// storage  = 1.order 2.auth
+// storage  = 1.auth
 
 const saveStorage = async (key, value) => {
   await AsyncStorage.setItem(key, JSON.stringify(value));

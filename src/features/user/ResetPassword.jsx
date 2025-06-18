@@ -25,7 +25,7 @@ const ResetPassword = () => {
       setUserSuccess(res);
       router.back();
     } catch (error) {
-      console.error(error);
+      // console.error(error);
       setErrMsg(error.message);
       throw error;
     } finally {
@@ -40,7 +40,13 @@ const ResetPassword = () => {
           {/* alert */}
           <Alerts status="error" msg={errMsg} setMsg={setErrMsg} />
           {/* password */}
-          <InputPassword color="#1F41BB" setReq={setReq} value={req.password} />
+          <InputPassword
+            title="Password"
+            color="#1F41BB"
+            field="password"
+            setReq={setReq}
+            value={req.password}
+          />
           {/* confirmationPassword */}
           <InputPassword
             title="Confirmation Password :"

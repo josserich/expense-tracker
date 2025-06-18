@@ -25,18 +25,38 @@ const userSchema = async () => {
   );
   `);
   const query = `
-  SELECT * FROM User `;
+  SELECT 
+  * 
+  FROM 
+  User `;
   const user = await db.getFirstAsync(query);
   if (!user) {
+    // hashingPassword
+    bcryptjs.setRandomFallback((len) => {
+      const buf = new Uint8Array(len);
+      for (let i = 0; i < len; i++) {
+        buf[i] = Math.floor(Math.random() * 256);
+      }
+      return buf;
+    });
+    const salt = await bcryptjs.genSalt(10);
+    const hashedPassword = await bcryptjs.hash("billionaireWFA100%", salt);
     const query = `
     INSERT
     INTO
     User
     (UserName, UserPassword, UserFullname, UserEmail, UserImg, UserInfo)
     VALUES
-    ("josse", "billionaireWFA100%", "Josse Surya Pinem", "pinemjosse@gmail.com", "", "")
+    (?, ?, ?, ?, ?, ?)
     `;
-    await db.runAsync(query);
+    await db.runAsync(query, [
+      "josse",
+      `${hashedPassword}`,
+      "Josse Surya Pinem",
+      "pinemjosse@gmail.com",
+      "",
+      "",
+    ]);
   }
 };
 const updateUserAPI = async (req) => {

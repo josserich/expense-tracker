@@ -1,12 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import {
-  View,
-  KeyboardAvoidingView,
-  StyleSheet,
-  Platform,
-  TouchableWithoutFeedback,
-  Keyboard,
-} from "react-native";
+import { KeyboardAvoidingView, Platform, Keyboard } from "react-native";
 import { AllContext } from "../context/AllProvider";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 

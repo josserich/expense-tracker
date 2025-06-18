@@ -28,7 +28,6 @@ const UpdateUser = () => {
     setLoading(true);
     try {
       const users = await getUserAPI();
-      console.log(users);
       setReqUser({
         userId: users.UserId,
         userName: users.UserName,
@@ -153,9 +152,9 @@ const UpdateUser = () => {
           {/* button update */}
           <View
             className="p-4 border-t border-t-[#d1c6c4]"
-            style={{
-              paddingBottom: bottom + 10,
-            }}
+            // style={{
+            //   paddingBottom: bottom,
+            // }}
           >
             <TouchableOpacity
               className="bg-[#1F41BB] px-4 py-3 rounded-md"
