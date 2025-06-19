@@ -1,35 +1,42 @@
 {
   "expo": {
-    "name": "cash",
-    "slug": "cash",
-    "scheme": "cash",
+    "name": "expense-tracker",
+    "slug": "expense-tracker",
+    "scheme": "expense-tracker",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/assets/img/logo.jpg",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./src/assets/img/logo.jpg",
+      "resizeMode": "cover",
+      "backgroundColor": "#315EFF"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./src/assets/img/logo.jpg",
+        "backgroundColor": "#315EFF"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.jossedev.expensetracker"
     },
     "web": {
       "bundler": "metro",
-      "favicon": "./assets/favicon.png"
+      "favicon": "./src/assets/img/logo.jpg"
     },
     "plugins": [
       "expo-router",
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "8ed34672-b7ad-48fb-8f92-c0aa9b6e6b12"
+      }
+    }
   }
 }

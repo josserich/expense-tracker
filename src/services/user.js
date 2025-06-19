@@ -26,11 +26,11 @@ const userSchema = async () => {
   `);
   const query = `
   SELECT 
-  * 
+  COALESCE(COUNT(*), 0) AS TotalUser
   FROM 
   User `;
-  const user = await db.getFirstAsync(query);
-  if (!user) {
+  const { TotalUser } = await db.getFirstAsync(query);
+  if (TotalUser === 0) {
     // hashingPassword
     bcryptjs.setRandomFallback((len) => {
       const buf = new Uint8Array(len);
