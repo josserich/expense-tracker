@@ -1,2 +1,4 @@
 START : 16-06-2025
 DONE : 18-08-2025
+
+TITLE = "Time is an asset, money is just a tool. Whoever can manage both will win in the world."
